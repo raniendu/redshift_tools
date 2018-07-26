@@ -287,7 +287,7 @@ def main():
 
             if not get_view_def(schema,table)=='Not a view':
                 print('\nCREATE VIEW {0}.{1} AS '.format(schema,table) + get_view_def(schema,table))
-                print('''ALTER VIEW {0}.{1} OWNER TO {2}'''.format(schema,table,get_view_owner(schema,table)))
+                print('''ALTER VIEW {0}.{1} OWNER TO {2};'''.format(schema,table,get_view_owner(schema,table)))
 
 
             (schema, table, relacl, nspacl) = get_acl(schema, table)
