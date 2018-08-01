@@ -3,6 +3,7 @@ from networkx import Graph, OrderedGraph
 from flask import Flask
 import json
 from flask import make_response
+import yaml
 
 app = Flask(__name__)
 
@@ -65,11 +66,16 @@ class PrintGraph(OrderedGraph):
 
 g = PrintGraph()
 grants = []
-HOST=''
-PORT=
-USER=''
-PASSWORD=''
-DATABASE='''
+
+config_file = open('/'.join((os.getcwd(),'config.yaml')),'r')
+
+config = yaml.load(config_file)
+
+HOST=config['database']['host']
+PORT=config['database']['port']
+USER=config['database']['user']
+PASSWORD=config['database']['password']
+DATABASE=config['database']['database']
 
 
 def get_dependent_objects(schema, table):
