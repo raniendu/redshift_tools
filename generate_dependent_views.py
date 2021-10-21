@@ -70,7 +70,7 @@ grants = []
 
 config_file = open('/'.join((os.getcwd(),'config.yaml')),'r')
 
-config = yaml.load(config_file)
+config = yaml.safe_load(config_file)
 
 HOST=config['database']['host']
 PORT=config['database']['port']
@@ -270,7 +270,7 @@ def jsonify(status=200, indent=4, sort_keys=True, **kwargs):
 def main():
     all_grants = []
 
-    table_list = (('schema','table'),)
+    table_list = (('hercules','o_exchange_rates_drop'),)
 
     for (base_schema, base_table) in table_list:
         g.clear()
