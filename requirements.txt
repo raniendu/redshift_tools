@@ -9,10 +9,10 @@ kiwisolver==1.0.1
 MarkupSafe==1.0
 matplotlib==2.2.2
 networkx==2.1
-numpy==1.14.5
+numpy==1.19
 psycopg2==2.7.5
 pyparsing==2.2.0
 python-dateutil==2.7.3
 pytz==2018.5
 six==1.11.0
-Werkzeug==0.15.3
+Werkzeug==2.2.3
